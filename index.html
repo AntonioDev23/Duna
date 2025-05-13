@@ -13,19 +13,27 @@
         }
 
         .deserto {
-            background: url('areia-textura.jpg') no-repeat center center;
+            background: url('imagens/Deserto.png') no-repeat center center;
             background-size: cover;
             position: relative;
             height: 100vh;
         }
 
-        .verme svg {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: movimentoVerme 10s infinite;
-        }
+        .verme {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 200px; /* ajuste conforme o tamanho da sua imagem */
+        height: 100px; /* ajuste conforme o tamanho da sua imagem */
+        background-image: url('verme-de-areia.png'); /* caminho da imagem */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: translateX(-50%);
+        animation: movimentoVerme 10s linear infinite;
+        pointer-events: none; /* impede que a animação interfira com o mouse */
+    }
+
 
         @keyframes movimentoVerme {
             0% {
