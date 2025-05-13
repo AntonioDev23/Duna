@@ -22,33 +22,45 @@
         .verme {
         position: absolute;
         bottom: 0;
-        left: 50%;
-        width: 200px; /* ajuste conforme o tamanho da sua imagem */
-        height: 100px; /* ajuste conforme o tamanho da sua imagem */
-        background-image: url('verme-de-areia.png'); /* caminho da imagem */
-        background-size: cover;
+        left: 0;
+        width: 200px;
+        height: 120px;
+        background-image: url('imagens/9371fffb-7f70-47f0-b861-48a9f49a17e5.png');
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transform: translateX(-50%);
-        animation: movimentoVerme 10s linear infinite;
-        pointer-events: none; /* impede que a animação interfira com o mouse */
+        transform: translateY(0) scale(1);
+        animation: surgeNaAreia 6s ease-in-out infinite;
+        z-index: 2;
+        pointer-events: none;
+        opacity: 0.95;
+        filter: drop-shadow(0 5px 15px rgba(0,0,0,0.5));
+}
+
+    @keyframes surgeNaAreia {
+    0% {
+        transform: translate(-300px, 40px) scale(0.9);
+        opacity: 0;
     }
+    25% {
+        transform: translate(20vw, 0px) scale(1.05);
+        opacity: 1;
+    }
+    50% {
+        transform: translate(40vw, -10px) scale(1.1);
+        opacity: 1;
+    }
+    75% {
+        transform: translate(70vw, 10px) scale(0.95);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 40px) scale(0.9);
+        opacity: 0;
+    }
+}
 
 
-        @keyframes movimentoVerme {
-            0% {
-                left: -200px;
-                bottom: 0;
-            }
-            50% {
-                left: 50%;
-                bottom: 50px;
-            }
-            100% {
-                left: 100vw;
-                bottom: 0;
-            }
-        }
     </style>
 </head>
 <body>
